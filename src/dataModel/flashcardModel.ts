@@ -1,5 +1,5 @@
 import axios from "axios";
-import { IFlashcard } from "../interfaces";
+import { IFlashcard, INewFlashcard } from "../interfaces";
 
 const flashcardUrl = "http://localhost:4995/flashcards";
 
@@ -17,27 +17,27 @@ export const getFlashcards = async () => {
 	});
 };
 
-// export const addFlashcard = async (flashcard: INewFlashcard) => {
-// 	return new Promise<string>((resolve, reject) => {
-// 		(async () => {
-// 			try {
-// 				const headers = {
-// 					"Access-Control-Allow-Origin": "*",
-// 					"Content-Type": "application/json",
-// 				};
+export const addFlashcard = async (flashcard: INewFlashcard) => {
+	return new Promise<string>((resolve, reject) => {
+		(async () => {
+			try {
+				const headers = {
+					"Access-Control-Allow-Origin": "*",
+					"Content-Type": "application/json",
+				};
 
-// 				const response = await axios.post(flashcardUrl, flashcard, {
-// 					headers,
-// 				});
+				const response = await axios.post(flashcardUrl, flashcard, {
+					headers,
+				});
 
-// 				if (response.status === 201) {
-// 					resolve("ok");
-// 				} else {
-// 					reject("Error status " + response.status);
-// 				}
-// 			} catch (e) {
-// 				reject("Unknown error.");
-// 			}
-// 		})();
-// 	});
-// };
+				if (response.status === 201) {
+					resolve("ok");
+				} else {
+					reject("Error status " + response.status);
+				}
+			} catch (e) {
+				reject("Unknown error.");
+			}
+		})();
+	});
+};
