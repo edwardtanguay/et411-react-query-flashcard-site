@@ -1,0 +1,19 @@
+{
+  "flashcards": [
+    {
+      "id": 1,
+      "front": "the permission",
+      "back": "die Erlaubnis"
+    },
+    {
+      "id": 2,
+      "front": "the design",
+      "back": "der Entwurf"
+    },
+    {
+      "front": "the challenge",
+      "back": "die Herausforderung",
+      "id": 3
+    }
+  ]
+}
